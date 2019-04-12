@@ -1,0 +1,1 @@
+type s = Star|Braces of s*s;;
