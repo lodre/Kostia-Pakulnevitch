@@ -1,0 +1,10 @@
+let s = "ababc";;
+let pod = "abc";;
+let n = (String.length s)-1;;
+let m = (String.length pod)-1;;
+let a = Array.make (m+1) 0;;
+let rec p s i k = if i < k then (String.make 1 s.[i])^(p s (i+1) k) else (String.make 1 s.[i]);;
+let rec f x i =if i < 0 then 0 else (if p pod 0 i = p pod (x-i) x then (i+1) else f x (i-1));;
+for i = 0 to m do (a.(i)<-f i (i-1)) done;;
+let rec find i pos = if i>n then (if pos=m+1 then (i-m-1,n) else (0,0)) else (if pos = m+1 then (i-m-1,i-1) else (if s.[i]=pod.[pos] then (find (i+1) (pos+1)) else (find i (a.(pos)))));;   
+let (x,y) = find 0 0;;
