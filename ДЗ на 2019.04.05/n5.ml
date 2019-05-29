@@ -1,0 +1,10 @@
+let rec line n = print_string ((String.make ((n - 1) + (n mod 2)) '*')^"\n");;
+let rec lines n i =for a=0 to i do print_string ((String.make (n+1) ' ')^"*"^(String.make (n/2) ' ')^"\n") done;;
+let n = 3;;
+print_string ((String.make (n +1)' ')^"*"^"\n");;
+for i = 0 to n-1 do print_string ((String.make (n-i) ' ')^"*"^(String.make i ' ')^"*"^(String.make i ' ')^"*\n") done;;
+line (2*n+3);;
+lines n n;;   
+line (2*n+3);;
+for i = n-1 downto 0 do print_string ((String.make (n-i) ' ')^"*"^(String.make i ' ')^"*"^(String.make i ' ')^"*\n") done;;
+line (2*n+3);;
